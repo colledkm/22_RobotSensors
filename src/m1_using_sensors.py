@@ -25,7 +25,7 @@ import math
 def main():
     """ Calls the testing functions. """
     # Un-comment out these tests as you implement the methods they test.
-    #run_test_beep_and_tone()
+    run_test_beep_and_tone()
     #run_test_go_straight_for_seconds()
     # run_test_go_straight_for_inches_using_time()
     run_test_go_straight_for_inches_using_sensor()
@@ -179,7 +179,7 @@ def run_test_go_straight_for_inches_using_sensor():
     drive_system.go_straight_for_inches_using_sensor(12, -50)
 
     # -------------------------------------------------------------------------
-    # TODO: 9.  With your instructor, implement the
+    # DONE: 9.  With your instructor, implement the
     #      go_straight_for_inches_using_sensor    method of   DriveSystem.
     #      The tests are already written for you -- READ THEM (above).
     # -------------------------------------------------------------------------
@@ -363,10 +363,11 @@ class DriveSystem(object):
     def go_straight_for_inches_using_sensor(self, inches, speed):
         inches_per_degree = self.left_motor.WheelCircumference / 360
         degree = inches/inches_per_degree
+        self.left_motor.reset_position()
+        self.left_motor.turn_on(speed)
+        self.right_motor.turn_on(speed)
         while True:
             position = self.left_motor.get_position()
-            self.left_motor.turn_on(speed)
-            self.right_motor.turn_on(speed)
             if abs(position) >= degree:
                 break
         self.stop()
