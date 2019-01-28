@@ -367,7 +367,7 @@ class DriveSystem(object):
             position = self.left_motor.get_position()
             self.left_motor.turn_on(speed)
             self.right_motor.turn_on(speed)
-            if abs(position) >= degree:
+            if abs(position) >= abs(degree):
                 break
         self.stop()
         # Live code this with students
