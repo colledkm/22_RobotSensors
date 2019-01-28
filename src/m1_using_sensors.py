@@ -25,7 +25,7 @@ import math
 def main():
     """ Calls the testing functions. """
     # Un-comment out these tests as you implement the methods they test.
-    # run_test_beep_and_tone()
+    run_test_beep_and_tone()
     # run_test_go_straight_for_seconds()
     # run_test_go_straight_for_inches_using_time()
     # run_test_go_straight_for_inches_using_sensor()
