@@ -57,11 +57,12 @@ def run_test_beep_and_tone():
     #   in increments of 10, with 50 millisecond durations.
     #   Do not forget to apply the   wait   method to tone, as usual.
     # -------------------------------------------------------------------------
-    for _ in range 10:
+    for _ in range (10):
         b=Beeper()
         b.beep().wait()
         time.sleep(1)
-    for k in range 10:
+    for k in range (10):
+        time.sleep(1)
 
 
 # -----------------------------------------------------------------------------
