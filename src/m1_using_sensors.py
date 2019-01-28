@@ -26,9 +26,9 @@ def main():
     """ Calls the testing functions. """
     # Un-comment out these tests as you implement the methods they test.
     run_test_beep_and_tone()
-    # run_test_go_straight_for_seconds()
+    run_test_go_straight_for_seconds()
     # run_test_go_straight_for_inches_using_time()
-    # run_test_go_straight_for_inches_using_sensor()
+    run_test_go_straight_for_inches_using_sensor()
     # run_test_raise_arm()
     # run_test_lower_arm()
     # run_test_go_straight_until_black()
@@ -43,7 +43,7 @@ def run_test_beep_and_tone():
        -- tone method of the ToneMaker class
     """
     # -------------------------------------------------------------------------
-    # TODO: 4.  Implement and test this method.
+    # DONE: 4.  Implement and test this method.
     # -------------------------------------------------------------------------
     # IMPORTANT:
     #   For testing the   beep   method,
@@ -66,7 +66,7 @@ def run_test_beep_and_tone():
         T.tone(k,50)
 
 # -----------------------------------------------------------------------------
-# TODO 5:  With your instructor, do quiz questions XXX through XXX.
+# DONE 5:  With your instructor, do quiz questions XXX through XXX.
 #          After you understand the answers to those questions,
 #          mark this _TODO_ as DONE.
 # -----------------------------------------------------------------------------
@@ -361,7 +361,16 @@ class DriveSystem(object):
         self.go_straight_for_seconds(seconds, speed)
 
     def go_straight_for_inches_using_sensor(self, inches, speed):
-        pass
+        inches_per_degree = self.left_motor.WheelCircumference / 360
+        degree = inches/inches_per_degree
+        while True:
+            position = self.left_motor.get_position()
+            self.left_motor.turn_on(speed)
+            self.right_motor.turn_on(speed)
+            if position == degree:
+                break
+        self.left_motor.turn_off()
+        self.right_motor.turn_off()
         # Live code this with students
 
     def go_straight_until_black(self, speed):
