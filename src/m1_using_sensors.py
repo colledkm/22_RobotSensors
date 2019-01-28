@@ -3,21 +3,21 @@ This module lets you practice the use of robot sensors.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Katana Colledge.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import ev3dev.ev3 as ev3
 import time
 import math
 
 # -----------------------------------------------------------------------------
-# TODO 2:  With your instructor, do quiz questions 1 through 5.
+# DONE 2:  With your instructor, do quiz questions 1 through 5.
 #          After you understand the answers to those questions,
 #          mark this _TODO_ as DONE.
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
-# TODO 3:  With your instructor, do quiz questions 6 through XXX.
+# DONE 3:  With your instructor, do quiz questions 6 through XXX.
 #          After you understand the answers to those questions,
 #          mark this _TODO_ as DONE.
 # -----------------------------------------------------------------------------
@@ -57,6 +57,10 @@ def run_test_beep_and_tone():
     #   in increments of 10, with 50 millisecond durations.
     #   Do not forget to apply the   wait   method to tone, as usual.
     # -------------------------------------------------------------------------
+    for k in range 10:
+        b=Beeper()
+        b.beep().wait()
+        time.sleep(1)
 
 
 # -----------------------------------------------------------------------------
@@ -386,8 +390,9 @@ class DriveSystem(object):
 #   -- Motor
 #   -- TouchSensor
 #   -- ColorSensor
-#   -- IR_DistanceSensor
-#   --
+#   -- IR_ProximitySensor
+#   -- Beeper
+#   -- Tone maker
 # USE them, but do NOT modify them.
 ###############################################################################
 class Motor(object):
