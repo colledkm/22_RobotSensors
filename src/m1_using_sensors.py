@@ -64,8 +64,6 @@ def run_test_beep_and_tone():
     for k in range (100,200,10):
         T=ToneMaker()
         T.tone(k,50)
-        print(k)
-
 
 # -----------------------------------------------------------------------------
 # TODO 5:  With your instructor, do quiz questions XXX through XXX.
