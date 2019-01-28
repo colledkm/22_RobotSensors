@@ -367,10 +367,9 @@ class DriveSystem(object):
             position = self.left_motor.get_position()
             self.left_motor.turn_on(speed)
             self.right_motor.turn_on(speed)
-            if position == degree:
+            if abs(position) == degree:
                 break
-        self.left_motor.turn_off()
-        self.right_motor.turn_off()
+        self.stop()
         # Live code this with students
 
     def go_straight_until_black(self, speed):
