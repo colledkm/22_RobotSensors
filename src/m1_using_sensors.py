@@ -61,10 +61,10 @@ def run_test_beep_and_tone():
         b=Beeper()
         b.beep().wait()
         time.sleep(1)
-    for k in range (11):
+    for k in range (100,200,10):
         T=ToneMaker()
-        T.tone(100+k*10,50)
-        time.sleep(1)
+        T.tone(k,50)
+        print(k)
 
 
 # -----------------------------------------------------------------------------
